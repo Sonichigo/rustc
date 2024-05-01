@@ -1,4 +1,4 @@
-## GitHub Action Series - 1 
+## GitHub Action Series - 1
 
 ### What is GitHub Action?
 
