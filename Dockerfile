@@ -1,4 +1,4 @@
-FROM node:20
+FROM node:22-alpine
 
 WORKDIR /app
 
@@ -6,8 +6,10 @@ COPY package*.json ./
 
 RUN npm install
 
-COPY . . 
-RUN ["chmod", "+x", "index.js"]
+COPY . /app
 
 RUN ls
-ENTRYPOINT ["node", "index.js"]
+
+RUN chmod +x entrypoint.sh
+
+ENTRYPOINT ["/app/entrypoint.sh", "/app/index.js"]
