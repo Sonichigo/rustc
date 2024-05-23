@@ -22,7 +22,7 @@ async function run() {
       changes: 0
     };
 
-    diffData =  changedFiles.forEach(file => { 
+    diffData =  changedFiles.forEach(acc, file => { 
       acc.additions += file.additions; 
       acc.deletions += file.deletions; 
       acc.changes += file.changes; 
