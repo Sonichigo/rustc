@@ -22,10 +22,11 @@ async function run() {
       changes: 0
     };
 
-    diffData =  changedFiles.forEach(acc, file => { 
-      acc.additions += file.additions; 
-      acc.deletions += file.deletions; 
-      acc.changes += file.changes; 
+    diffData = changedFiles.reduce((acc, file) => {
+      acc.additions += file.additions;
+      acc.deletions += file.deletions;
+      acc.changes += file.changes;
+      return acc;
     }, diffData);
 
     await octokit.rest.issues.createComment({
