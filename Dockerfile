@@ -1,17 +1,15 @@
-FROM node:lts
+FROM node:22-alpine
 
-# Set the working directory
 WORKDIR /app
 
-COPY package*.json ./
+COPY package*.json /app/
 
-RUN npm install
+RUN cd /app/ && npm install -y
 
-# Copy the contents of the current directory into the build container
-COPY . /app
+COPY . /app/
 
 RUN ls
 
-RUN chmod +x entrypoint.sh
+RUN chmod +x /app/entrypoint.sh
 
 ENTRYPOINT ["/app/entrypoint.sh", "/app/index.js"]

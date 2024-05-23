@@ -5,6 +5,7 @@ on:
       - main
   pull_request:
     types: [opened, reopened]
+
 jobs:
   change-log:
     runs-on: ubuntu-latest
@@ -16,4 +17,3 @@ jobs:
         repo: ${{ github.event.repository.name }}
         pr_number: ${{ github.event.number }}
         token: ${{ secrets.GITHUB_TOKEN }}
-        
