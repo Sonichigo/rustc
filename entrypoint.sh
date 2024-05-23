@@ -1,4 +1,5 @@
 #!/bin/sh -l
 
 echo "Running action"
-node index.js
+echo "$PWD"
+cd /app && node index.js
