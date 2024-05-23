@@ -1,10 +1,15 @@
 FROM node:22-alpine
 
-COPY . .
-RUN npm install -y
+WORKDIR /app
+
+COPY package*.json /app/
+
+RUN cd /app/ && npm install -y
+
+COPY . /app/
 
 RUN ls
 
-RUN chmod +x entrypoint.sh
+RUN chmod +x /app/entrypoint.sh
 
-ENTRYPOINT ["entrypoint.sh", "index.js"]
+ENTRYPOINT ["/app/entrypoint.sh", "/app/index.js"]
