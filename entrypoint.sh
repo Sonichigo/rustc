@@ -1,5 +1,8 @@
 #!/bin/sh -l
 
 echo "Running action"
-ls
+echo "ls"
+npm install -y
+echo "==============================="
 node index.js
+echo "==============================="
