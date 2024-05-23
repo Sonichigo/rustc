@@ -17,4 +17,3 @@ jobs:
         repo: ${{ github.event.repository.name }}
         pr_number: ${{ github.event.number }}
         token: ${{ scerets.GITHUB_TOKEN }}
-        
