@@ -5,6 +5,7 @@ on:
       - main
   pull_request:
     types: [opened, reopened]
+
 jobs:
   change-log:
     runs-on: ubuntu-latest
